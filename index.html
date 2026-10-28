@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Analytics Learning Lab</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Excel / SQL / Power BI</p>
+          <h1>Sales Analytics<br /><span>Learning Lab</span></h1>
+          <p class="intro">
+            Follow one small retail dataset from raw spreadsheet rows to
+            business insights.
+          </p>
+        </div>
+        <div class="actions">
+          <a href="/data/sales_data_for_excel.csv" download>Download CSV</a>
+          <button type="button" onclick="window.print()">Print report</button>
+        </div>
+      </header>
+
+      <section class="kpis" id="kpis">
+        <div class="loading">Loading sales summary...</div>
+      </section>
+
+      <section class="grid two-columns">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">01 / Trend</p>
+              <h2>Monthly revenue</h2>
+            </div>
+          </div>
+          <div id="monthly-chart" class="chart loading">Loading chart...</div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">02 / Mix</p>
+              <h2>Revenue by category</h2>
+            </div>
+          </div>
+          <div id="category-chart" class="bars loading">Loading chart...</div>
+        </article>
+      </section>
+
+      <section class="grid two-columns">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">03 / Region</p>
+              <h2>Regional performance</h2>
+            </div>
+          </div>
+          <div id="region-chart" class="bars loading">Loading chart...</div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">04 / Products</p>
+              <h2>Top products</h2>
+            </div>
+          </div>
+          <div id="product-chart" class="bars loading">Loading chart...</div>
+        </article>
+      </section>
+
+      <section class="panel learning">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">05 / Learning path</p>
+            <h2>Use the same data in three tools</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <div>
+              <h3>Excel</h3>
+              <p>Inspect the raw CSV and verify Revenue = Units × Price × (1 − Discount).</p>
+            </div>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <div>
+              <h3>SQL</h3>
+              <p>Run the queries in the <code>sql</code> folder to calculate totals and rankings.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <div>
+              <h3>Power BI</h3>
+              <p>Import the CSV, recreate the measures, and compare your visuals with this dashboard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading table-heading">
+          <div>
+            <p class="eyebrow">06 / Raw rows</p>
+            <h2>Source data</h2>
+          </div>
+          <input id="search" type="search" placeholder="Search rows..." />
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Order</th>
+                <th>Date</th>
+                <th>Customer</th>
+                <th>Region</th>
+                <th>Product</th>
+                <th>Revenue</th>
+                <th>Profit</th>
+              </tr>
+            </thead>
+            <tbody id="rows-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

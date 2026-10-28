@@ -1,0 +1,14 @@
+-- Recreate these as measures in Power BI:
+--
+-- Total Revenue = SUM(sales[revenue])
+-- Total Profit = SUM(sales[profit])
+-- Total Orders = DISTINCTCOUNT(sales[order_id])
+-- Average Order Value = DIVIDE([Total Revenue], [Total Orders])
+-- Profit Margin = DIVIDE([Total Profit], [Total Revenue])
+--
+-- Suggested visuals:
+-- Cards: Total Revenue, Total Profit, Total Orders, Profit Margin
+-- Line chart: order_date with revenue and profit
+-- Bar chart: category with revenue
+-- Donut chart: region with revenue
+-- Table: product, revenue, profit, units
